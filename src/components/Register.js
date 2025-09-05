@@ -11,7 +11,7 @@ const Register = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:4000/api/register', { email, password }, { withCredentials: true });
+      const response = await axios.post(process.env.REACT_APP_BACKEND_URL + '/api/register', { email, password }, { withCredentials: true });
       setMessage(response.data.message);
       if (response.data.message.includes('successfully')) {
         setTimeout(() => {

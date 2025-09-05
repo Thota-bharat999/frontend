@@ -9,7 +9,7 @@ const Login = ({ onLogin }) => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:4000/api/login', { email, password }, { withCredentials: true });
+      const response = await axios.post(process.env.REACT_APP_BACKEND_URL + '/api/login', { email, password }, { withCredentials: true });
       setMessage(response.data.message);
       onLogin();
     } catch (error) {
