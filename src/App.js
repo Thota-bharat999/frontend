@@ -22,7 +22,10 @@ function App() {
             </>
           )}
           {isLoggedIn && (
-            <Link to="/dashboard" style={{ color: 'white', textDecoration: 'none', padding: '8px 15px', borderRadius: '5px', backgroundColor: '#f44336' }}>Dashboard</Link>
+            <>
+              <Link to="/dashboard" style={{ color: 'white', textDecoration: 'none', padding: '8px 15px', borderRadius: '5px', backgroundColor: '#f44336' }}>Dashboard</Link>
+              <button onClick={handleLogout} style={{ marginLeft: '10px', padding: '8px 15px', borderRadius: '5px', backgroundColor: '#f44336', color: 'white', border: 'none', cursor: 'pointer' }}>Logout</button>
+            </>
           )}
         </nav>
         <Routes>
