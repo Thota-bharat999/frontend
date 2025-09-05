@@ -10,6 +10,7 @@ const Register = () => {
 
   const handleRegister = async (e) => {
     e.preventDefault();
+    console.log('Backend URL:', process.env.REACT_APP_BACKEND_URL);
     try {
       const response = await axios.post(process.env.REACT_APP_BACKEND_URL + '/api/register', { email, password }, { withCredentials: true });
       setMessage(response.data.message);
